@@ -1,5 +1,5 @@
 {
-  "name": "jack-in-the-box-balancer",
+  "name": "fastpuls",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "update": "npx npm-check-updates -u"
   },
-  "author": "BolverBlitz, DarkIntaqt",
-  "license": "MIT",
+  "author": "BolverBlitz",
+  "license": "AGPLv3",
   "_moduleAliases": {
     "@root": ".",
     "@src": "./src",

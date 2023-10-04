@@ -33,29 +33,8 @@ module.exports = {
         "validation": "required||custom_list:true,false",
         "default": "false",
     },
-    "REDIS_USER": {
-        "section": "Database Redis (Cache)",
-        "type": "string",
-        "validation": "min:0||max:255",
-    },
-    "REDIS_PASSWORD": {
-        "type": "string",
-        "validation": "min:0||max:255",
-    },
-    "REDIS_HOST": {
-        "type": "string",
-        "validation": "ipv4",
-    },
-    "REDIS_PORT": {
-        "type": "number",
-        "validation": "min:0||max:65535",
-    },
-    "REDIS_DB": {
-        "type": "string",
-        "validation": "min:0||max:255",
-    },
-    "BALANCER_PORT": {
-        "section": "Balancer",
+    "API_PORT": {
+        "section": "API",
         "type": "number",
         "validation": "required||min:0||max:65535",
         "default": 8080
@@ -69,7 +48,7 @@ module.exports = {
     "DECREASEPERMIN": {
         "type": "number",
         "validation": "required||min:0||max:1000000",
-        "default": 30
+        "default": 600
     },
     "HE_FAST_BUFFER": {
         "section": "Hyper Express",
