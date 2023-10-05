@@ -1,6 +1,6 @@
 Benchmarks: 
 Puls VAG: 20.73 req/s | Duration p(95)=1m0s
-<details open>
+<details>
 checks.........................: 74.46% ✓ 1158      ✗ 397
 data_received..................: 12 MB  157 kB/s
 data_sent......................: 1.8 MB 25 kB/s
@@ -20,7 +20,7 @@ vus............................: 19     min=19      max=1999
 vus_max........................: 2000   min=2000    max=2000
 </details>
 Fast VAG: 5281.13 req/s | Duration p(95)=380.54ms
-<details open>
+<details>
 checks.........................: 100.00% ✓ 237658      ✗ 0
 data_received..................: 291 MB  6.5 MB/s
 data_sent......................: 38 MB   845 kB/s
