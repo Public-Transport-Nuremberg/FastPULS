@@ -1,3 +1,7 @@
+Implementation of a faster REST API to use in local environments.  
+`Currently only support the Haltestellen Endpoint with JSON and XML.`  
+Fahrten and Abfahrten APIs need a diffrent project to get the data in the first place.  
+
 Benchmarks:  
 Puls VAG: 20.73 req/s | Duration p(95)=1m0s
 <details>
