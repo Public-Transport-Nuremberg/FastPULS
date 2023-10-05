@@ -1,6 +1,15 @@
-Benchmarks:
+Implementation of a faster REST API to use in local environments.  
+`Currently only support the Haltestellen Endpoint with JSON and XML.`  
+Fahrten and Abfahrten APIs need a diffrent project to get the data in the first place.  
+
+Performance:  
+While the PULS API can take anywhere from 70ms to 4500ms (with a 12ms ping to the server) to respond to a request, FastPuls typically responds within 5ms, even if all stops are requested.  
+There is a closed-source version of FastPuls that uses Redis. However, it's slower compared to the pure in-app memory implementation.  
+
+Benchmarks:  
 Puls VAG: 20.73 req/s | Duration p(95)=1m0s
 <details>
+<pre>
 checks.........................: 74.46% ✓ 1158      ✗ 397
 data_received..................: 12 MB  157 kB/s
 data_sent......................: 1.8 MB 25 kB/s
@@ -18,9 +27,11 @@ iteration_duration.............: avg=40.38s  min=430.55ms med=41.41s  max=1m0s  
 iterations.....................: 1555   20.730588/s
 vus............................: 19     min=19      max=1999
 vus_max........................: 2000   min=2000    max=2000
+</pre>
 </details>
 Fast VAG: 5281.13 req/s | Duration p(95)=380.54ms
 <details>
+<pre>
 checks.........................: 100.00% ✓ 237658      ✗ 0
 data_received..................: 291 MB  6.5 MB/s
 data_sent......................: 38 MB   845 kB/s
@@ -38,4 +49,5 @@ iteration_duration.............: avg=274.51ms min=0s med=319.47ms max=780.16ms p
 iterations.....................: 237658  5281.135947/s
 vus............................: 45      min=45        max=1998
 vus_max........................: 2000    min=2000      max=2000
+</pre>
 </details>
