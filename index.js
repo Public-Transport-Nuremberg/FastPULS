@@ -16,6 +16,8 @@ process.package = packageJSON;
 process.log = {};
 process.log = log;
 
+process.package = require('@root/package.json');
+
 // Check if all .env values are valid
 if (fs.existsSync('.env')) {
   // Check if all .env values are valid

@@ -1,4 +1,4 @@
-Benchmarks: 
+Benchmarks:
 Puls VAG: 20.73 req/s | Duration p(95)=1m0s
 <details>
 checks.........................: 74.46% ✓ 1158      ✗ 397
