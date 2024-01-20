@@ -2,6 +2,9 @@ Implementation of a faster REST API to use in local environments.
 `Currently only support the Haltestellen Endpoint with JSON and XML.`  
 Fahrten and Abfahrten APIs need a diffrent project to get the data in the first place.  
 
+### Data integrity
+I try my best to serve the original data i got from PULS, yes this includes randomly lowercase or uppercase "Kennungen" and other things i might not even notice.
+
 ### Plus Mode
 
 Activate Plus Mode by setting the environment flag `PLUS_MODE=true`. For additional logging, use `ENABLE_INIT_LOG=true`. Plus Mode's data retrieval is efficiently managed by a worker pool, whose size you can control with `PARALLEL_REQUESTS` (default is 10).
