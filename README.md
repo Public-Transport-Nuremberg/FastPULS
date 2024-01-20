@@ -3,20 +3,19 @@ Implementation of a faster REST API to use in local environments.
 Fahrten and Abfahrten APIs need a diffrent project to get the data in the first place.  
 
 Plus Mode:
+Enable it with the ENV Flag `PLUS_MODE=true` you can also add extra logging with `ENABLE_INIT_LOG=true`
+All data that Plus mode needs to fetch is handeld with a pool of workers. Set the pool size with `PARALLEL_REQUESTS` default 10.
+To enable automatic updates of the data set `AUTOMATIC_BACKGROUND_UPDATE=6` this will update the data over a timespan of 6 hours to reduce load on the original API.
+Plus Mode enables the output of data thats not available on the same route in the original API, but i think would make sense:
+- "Linienname" in Haltestellen:
+    In Plus Mode the Haltestellen Endpoint will return a list of the lines that stops at the stop.
+    A few year ago i was toled "Just use the Abfahrten API", but with special scool lines, and night buses this isn´t even possible to give accurate data.
+    FastPuls therfor can´t guarantee that the data is accurate, but it consistantly scans for new lines and updates the data automaticly in the backround without negative performance impact.
+    You can use the following ENV Flags:
+    - `MAX_LINE_AGE` to set the maximum age of a line in days, default is 14 days (Covers most cases)
 
-Activate Plus Mode by setting the environment flag PLUS_MODE=true. For additional logging, use ENABLE_INIT_LOG=true. Plus Mode's data retrieval is efficiently managed by a worker pool, whose size you can control with PARALLEL_REQUESTS (default is 10).
-
-For automatic data updates, set AUTOMATIC_BACKGROUND_UPDATE=6, which refreshes the data every 6 hours, reducing the load on the original API.
-
-Plus Mode offers enhanced data output, providing information not available on the same route in the original API, which I believe is beneficial:
-
-    "Linienname" in Haltestellen:
-    In Plus Mode, the Haltestellen Endpoint will return a list of lines that stop at each stop. A few years ago, the suggestion was "Just use the Abfahrten API", but due to special school lines and night buses, this approach does not always yield accurate data.
-    While FastPuls cannot guarantee absolute accuracy, it consistently scans for new lines and updates the data automatically in the background, ensuring minimal impact on performance.
-    Utilize the following environment flags for further customization:
-        MAX_LINE_AGE: Sets the maximum age of a line's data in days, with a default of 14 days (covering most scenarios).
-
-Regarding performance, for a typical request, PULS manages about 0.013332/s, whereas FastPuls achieves approximately 5497.829617/s, which is around 41 million percent faster. To process the same data for all stops in a single request, PULS operates at about 0.0019/s, while FastPuls can handle around 667.190749/s, amounting to about 35 million percent faster.
+    Performance for a real world request is about 0.013332/s for PULS, and arround 5497.829617/s for FastPuls. This is about 41 Million Percent faster.
+    To get the same data for all stops in a single request, PULS can do about 0.0019/s, while FastPuls can deliver arround 667.190749/s. This is about 35 Million Percent faster.
 
 
 Performance:  
