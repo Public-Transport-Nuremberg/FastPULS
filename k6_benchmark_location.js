@@ -12,7 +12,7 @@ export let options = {
     },
 };
 
-const BASE_URL = 'http://localhost/api/v1/haltestellen/VAG/location?lon=11.0647882822154&lat=49.4480881582118&radius=500'; // replace with your app's URL
+const BASE_URL = 'http://localhost/api/v1/haltestellen/VAG/location?lon=11.0647882822154&lat=49.4480881582118&radius=500';
 
 export default function () {
     let responses = http.batch([

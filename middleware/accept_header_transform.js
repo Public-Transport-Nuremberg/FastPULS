@@ -45,6 +45,8 @@ const convertAndRespond = () => {
             } else if (acceptHeader.includes('application/xml') || acceptHeader.includes('text/xml')) {
                 res.header('Content-Type', 'application/xml');
                 return res.send(HaltestellenobjectToXml({ 'Metadata': Medatdata, 'Haltestellen': res.data }));
+            } else {
+                return res.json({ 'Metadata': Medatdata, 'Haltestellen': res.data });
             }
 
             res.status(406).send('Not Acceptable');
