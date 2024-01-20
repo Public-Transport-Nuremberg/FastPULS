@@ -6,7 +6,7 @@ Fahrten and Abfahrten APIs need a diffrent project to get the data in the first 
 
 Activate Plus Mode by setting the environment flag `PLUS_MODE=true`. For additional logging, use `ENABLE_INIT_LOG=true`. Plus Mode's data retrieval is efficiently managed by a worker pool, whose size you can control with `PARALLEL_REQUESTS` (default is 10).
 
-For automatic data updates, set `AUTOMATIC_BACKGROUND_UPDATE=6`, which refreshes the data every 6 hours, reducing the load on the original API.
+For automatic data updates, set `AUTOMATIC_BACKGROUND_UPDATE=6`. This setting distributes the update requests evenly over a 6-hour timespan to reduce the load on the original API.
 
 Plus Mode offers enhanced data output, providing information not available on the same route in the original API, which I believe is beneficial:
 
