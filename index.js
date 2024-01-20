@@ -53,5 +53,6 @@ if (fs.existsSync('.env')) {
     }, process.env.GLOBALWAITTIME || 100);
   } catch (error) {
     console.error(error);
+    process.exit(1);
   }
 })();
