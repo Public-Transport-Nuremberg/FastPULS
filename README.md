@@ -1,4 +1,4 @@
-Implementation of a faster REST API to use in local environments.  
+Faster implementation of the PULS API to use in local environments.  
 `Currently only support the Haltestellen Endpoint with JSON and XML.`  
 Fahrten and Abfahrten APIs need a diffrent project to get the data in the first place.  
 
@@ -24,7 +24,8 @@ Regarding performance, for a typical request, PULS manages about 0.013332/s, whe
 
 ### Performance  
 While the PULS API can take anywhere from 70ms to 4500ms (with a 12ms ping to the server) to respond to a request, FastPuls typically responds within 5ms, even if all stops are requested.  
-There is a closed-source version of FastPuls that uses Redis. However, it's slower compared to the pure in-app memory implementation.  
+There is a closed-source version of FastPuls that uses Redis (In case you need it, just write me). However, it's slower compared to the pure in-app memory implementation used here.
+About latancy you can look at the benchmarks provided below.  
 
 ### Benchmarks
 Puls VAG: 20.73 req/s | Duration p(95)=1m0s
